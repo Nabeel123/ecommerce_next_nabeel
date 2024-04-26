@@ -7,8 +7,8 @@ export default defineConfig({
   name: 'default',
   title: 'ecommerce youtube best',
 
-  projectId: process.env.NEXT_PRODUCT_SANITY_ID,
-  dataset: process.env.NEXT_SANITY_DATASET,
+  projectId: 'tgcr5zka',
+  dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
 
