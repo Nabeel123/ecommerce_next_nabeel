@@ -1,13 +1,19 @@
 import Image from "next/image";
 import { client, urlFor } from "../lib/sanity";
+
 import Link from "next/link";
 
 async function getData() {
-  const query = "*[_type == 'heroImage'][0]";
+  const query = `*[_type == "heroImages"][0]`;
 
-  const data = await client.fetch(query);
-
-  return data;
+  try {
+    const data = await client.fetch(query);
+    return data;
+  } catch (error) {
+    console.error("Error fetching hero image data:", error);
+    // Handle error gracefully, e.g., display a fallback message
+    return null;
+  }
 }
 
 export default async function Hero() {
